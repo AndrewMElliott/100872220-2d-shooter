@@ -5,8 +5,13 @@ using UnityEngine;
 public class ShipController : MonoBehaviour {
 
 	[SerializeField]
-	private float shipSpeed = 5f;
+	private float shipSpeed = 0.2f;
+	[SerializeField]
+	private float fireRate = 0.05f;
 
+	private float fireCoolDown = 0.0f;
+	[SerializeField]
+	private GameObject bulletPrefab;
 
 
 	// Use this for initialization
@@ -16,10 +21,10 @@ public class ShipController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		MoveShip ();
+		ShipControls ();
 	}
 
-	private void MoveShip ()
+	private void ShipControls ()
 	{
 
 		if (Input.GetKey (KeyCode.W)) {
@@ -30,8 +35,6 @@ public class ShipController : MonoBehaviour {
 			} else {
 				this.transform.position = position;
 			}
-				
-
 		}
 		if (Input.GetKey (KeyCode.S)) {
 			Vector2 position = this.transform.position;
@@ -41,7 +44,6 @@ public class ShipController : MonoBehaviour {
 			} else {
 				this.transform.position = position;
 			}
-
 		}
 		if (Input.GetKey (KeyCode.A)) {
 			Vector2 position = this.transform.position;
@@ -52,7 +54,6 @@ public class ShipController : MonoBehaviour {
 			}else{
 				this.transform.position = position;
 			}
-
 		}
 		if (Input.GetKey (KeyCode.D)) {
 			Vector2 position = this.transform.position;
@@ -63,7 +64,14 @@ public class ShipController : MonoBehaviour {
 			}else{
 				this.transform.position = position;
 			}
+		}
+		if ((Input.GetKey (KeyCode.Space) && Time.time > fireCoolDown + fireRate) || (Input.GetKeyDown(KeyCode.Space))){
+			
+			GameObject bullet = Instantiate (bulletPrefab) as GameObject;
+			Vector2 spawnPoint = new Vector2 (transform.position.x + 2f, transform.position.y);
+			bullet.transform.position = spawnPoint;
 
+			fireCoolDown = Time.time;
 		}
 	}
 }
