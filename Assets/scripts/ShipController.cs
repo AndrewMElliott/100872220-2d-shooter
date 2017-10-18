@@ -8,7 +8,8 @@ public class ShipController : MonoBehaviour {
 	private float shipSpeed = 0.2f;
 	[SerializeField]
 	private float fireRate = 0.05f;
-
+	[SerializeField]
+	private float health = 5f;
 	private float fireCoolDown = 0.0f;
 	[SerializeField]
 	private GameObject bulletPrefab;
@@ -22,6 +23,11 @@ public class ShipController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		ShipControls ();
+		Explode ();
+	}
+
+	public void SetDamage(float damage){
+		health -= damage;
 	}
 
 	private void ShipControls ()
@@ -68,10 +74,17 @@ public class ShipController : MonoBehaviour {
 		if ((Input.GetKey (KeyCode.Space) && Time.time > fireCoolDown + fireRate) || (Input.GetKeyDown(KeyCode.Space))){
 			
 			GameObject bullet = Instantiate (bulletPrefab) as GameObject;
-			Vector2 spawnPoint = new Vector2 (transform.position.x + 1f, transform.position.y);
+			Vector2 spawnPoint = new Vector2 (transform.position.x + 1.5f, transform.position.y);
 			bullet.transform.position = spawnPoint;
 
 			fireCoolDown = Time.time;
+		}
+	}
+	private void Explode(){
+		if (health <= 0f) {
+			Vector2 startPos = new Vector2 (-5.3f, 0f);
+			transform.position = startPos;
+			health = 1;
 		}
 	}
 }

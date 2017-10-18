@@ -117,11 +117,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4286107305593068, guid: 8996b1d20bc46ad4497b1dd86e1f3cf6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.03
+      value: -5.88
       objectReference: {fileID: 0}
     - target: {fileID: 4286107305593068, guid: 8996b1d20bc46ad4497b1dd86e1f3cf6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.95
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4286107305593068, guid: 8996b1d20bc46ad4497b1dd86e1f3cf6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -378,5 +378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipSpeed: 0.1
   fireRate: 0.2
+  health: 3
   bulletPrefab: {fileID: 1161232253417998, guid: 58261541fd4201b4abb7f14e507fa714,
     type: 2}
