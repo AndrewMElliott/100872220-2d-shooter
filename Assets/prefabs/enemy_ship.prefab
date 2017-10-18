@@ -115,6 +115,8 @@ MonoBehaviour:
   fireRate: 2
   bulletPrefab: {fileID: 1423918152737286, guid: 00b85697f762d8e47bda0468d9549766,
     type: 2}
+  explosionPrefab: {fileID: 1480315053478214, guid: c2708bcd9150b8845a048e91043fef08,
+    type: 2}
 --- !u!212 &212194347681975162
 SpriteRenderer:
   m_ObjectHideFlags: 1

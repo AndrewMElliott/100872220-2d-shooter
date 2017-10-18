@@ -378,6 +378,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipSpeed: 0.1
   fireRate: 0.2
-  health: 3
+  currHealth: 5
+  maxHealth: 5
   bulletPrefab: {fileID: 1161232253417998, guid: 58261541fd4201b4abb7f14e507fa714,
+    type: 2}
+  explosionPrefab: {fileID: 1480315053478214, guid: c2708bcd9150b8845a048e91043fef08,
     type: 2}

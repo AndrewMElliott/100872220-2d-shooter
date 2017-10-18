@@ -14,6 +14,8 @@ public class EnemyAI : MonoBehaviour {
 	private float fireCooldown = 0f;
 	[SerializeField]
 	private GameObject bulletPrefab;
+	[SerializeField]
+	private GameObject explosionPrefab;
 
 
 	void Start () {
@@ -54,6 +56,9 @@ public class EnemyAI : MonoBehaviour {
 
 	private void Explode(){
 		if (health <= 0f) {
+			GameObject anim = Instantiate (explosionPrefab) as GameObject;
+			Vector2 spawnPoint = new Vector2 (transform.position.x , transform.position.y);
+			anim.transform.position = spawnPoint;
 			Destroy (gameObject);
 		}
 	}

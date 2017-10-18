@@ -9,10 +9,14 @@ public class ShipController : MonoBehaviour {
 	[SerializeField]
 	private float fireRate = 0.05f;
 	[SerializeField]
-	private float health = 5f;
+	private float currHealth = 5f;
+	[SerializeField]
+	private float maxHealth = 5f;
 	private float fireCoolDown = 0.0f;
 	[SerializeField]
 	private GameObject bulletPrefab;
+	[SerializeField]
+	private GameObject explosionPrefab;
 
 
 	// Use this for initialization
@@ -27,7 +31,7 @@ public class ShipController : MonoBehaviour {
 	}
 
 	public void SetDamage(float damage){
-		health -= damage;
+		currHealth -= damage;
 	}
 
 	private void ShipControls ()
@@ -81,10 +85,14 @@ public class ShipController : MonoBehaviour {
 		}
 	}
 	private void Explode(){
-		if (health <= 0f) {
+		if (currHealth <= 0f) {
+			GameObject anim = Instantiate (explosionPrefab) as GameObject;
+			Vector2 spawnPoint = new Vector2 (transform.position.x , transform.position.y);
+			anim.transform.position = spawnPoint;
+
 			Vector2 startPos = new Vector2 (-5.3f, 0f);
 			transform.position = startPos;
-			health = 1;
+			currHealth = maxHealth;
 		}
 	}
 }
