@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour {
 	private float bulletSpeed;
 	[SerializeField]
 	private float bulletLife;
+	[SerializeField]
+	private float damage = 1f;
 	//private Transform bulletPos = this.transform.position; 
 
 	
@@ -25,12 +27,12 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		Debug.Log ("Object name: " + col.tag);
-		if (col.tag == "Player") {
-
-		} else if (col.tag == "Enemy Ship") {
-			Destroy (gameObject);
+		
+		EnemyAI target = col.gameObject.GetComponent<EnemyAI> ();
+		if (target != null) {
+			target.SetDamage (damage);
 		}
+		Destroy (gameObject);
 	}	
 
 }

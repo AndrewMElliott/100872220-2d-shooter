@@ -68,7 +68,7 @@ public class ShipController : MonoBehaviour {
 		if ((Input.GetKey (KeyCode.Space) && Time.time > fireCoolDown + fireRate) || (Input.GetKeyDown(KeyCode.Space))){
 			
 			GameObject bullet = Instantiate (bulletPrefab) as GameObject;
-			Vector2 spawnPoint = new Vector2 (transform.position.x + 2f, transform.position.y);
+			Vector2 spawnPoint = new Vector2 (transform.position.x + 1f, transform.position.y);
 			bullet.transform.position = spawnPoint;
 
 			fireCoolDown = Time.time;

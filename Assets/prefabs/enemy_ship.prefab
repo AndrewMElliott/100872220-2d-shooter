@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  shipSpeed: 0.02
 --- !u!212 &212194347681975162
 SpriteRenderer:
   m_ObjectHideFlags: 1
