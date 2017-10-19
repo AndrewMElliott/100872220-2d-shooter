@@ -15,16 +15,15 @@ public class RightBullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Translate (Vector2.right * bulletSpeed * Time.deltaTime);
-		DelayDestroy (2f);
+		if (transform.position.x >= 7.4f)
+			Destroy (gameObject);
 	}
 
 	public void Destroy(){
 		Destroy (gameObject);
 	}
 
-	public void DelayDestroy(float time){
-		Destroy (gameObject, time);
-	}
+
 
 	void OnTriggerEnter2D(Collider2D col){
 		

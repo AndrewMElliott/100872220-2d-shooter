@@ -15,27 +15,15 @@ Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\U
 Loading G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.018 seconds
+- Completed reload, in  0.023 seconds
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.880398 ms
+UnloadTime: 1.895112 ms
 Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player Detected: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Player Detected: Player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -43,7 +31,7 @@ Trigger Object: Player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player Detected: Player
+Trigger Object: Player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -51,12 +39,52 @@ Trigger Object: Player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Player Detected: Player
+Trigger Object: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Enemy Ship
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Enemy Ship
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Trigger Object: Player
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: ffc -> priority: 1 
-  Thread -> id: 86c -> priority: 1 
-  Thread -> id: 1884 -> priority: 1 
-  Thread -> id: 2240 -> priority: 1 
+  Thread -> id: 1aa0 -> priority: 1 
+  Thread -> id: 1210 -> priority: 1 
+  Thread -> id: 10a4 -> priority: 1 
+  Thread -> id: 404 -> priority: 1 

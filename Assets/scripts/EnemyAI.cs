@@ -7,13 +7,9 @@ public class EnemyAI : MonoBehaviour {
 	private float health = 2f;
 	[SerializeField]
 	private float shipSpeed = 0.1f;
-	private float maxY;
-	private float minY;
-	[SerializeField]
-	private float fireRate = 2f;
-	private float fireCooldown = 0f;
-	[SerializeField]
-	private GameObject bulletPrefab;
+
+
+
 	[SerializeField]
 	private GameObject explosionPrefab;
 
@@ -25,7 +21,6 @@ public class EnemyAI : MonoBehaviour {
 
 	void Update () {
 		MoveShip ();
-		Shoot ();
 		Explode ();
 		if (transform.position.x <= -9f) {
 			Destroy (gameObject);
@@ -40,14 +35,7 @@ public class EnemyAI : MonoBehaviour {
 		transform.Translate (Vector2.left * shipSpeed);
 	}
 
-	private void Shoot(){
-		if (Time.time > fireCooldown) {
-			fireCooldown = Time.time + fireRate;
-			GameObject bullet = Instantiate (bulletPrefab) as GameObject;
-			Vector2 spawnPoint = new Vector2 (transform.position.x - 1.2f, transform.position.y);
-			bullet.transform.position = spawnPoint;
-		}
-	}
+
 
 	public void OnTriggerEnter2D(Collider2D other){
 		

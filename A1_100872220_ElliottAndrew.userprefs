@@ -1,14 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\ShipController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\BasicWeaponSystem.cs">
     <Files>
-      <File FileName="Assets\scripts\ShipController.cs" Line="92" Column="4" />
-      <File FileName="Assets\scripts\EnemyAI.cs" Line="62" Column="25" />
-      <File FileName="Assets\scripts\TriggerHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\SpawnEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\RightBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\SpawnPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\DestroyObject.cs" Line="7" Column="16" />
+      <File FileName="Assets\scripts\ShipController.cs" Line="25" Column="18" />
+      <File FileName="Assets\scripts\EnemyAI.cs" Line="11" Column="2" />
+      <File FileName="Assets\scripts\RightBullet.cs" Line="19" Column="25" />
+      <File FileName="Assets\scripts\LeftBullet.cs" Line="32" Column="3" />
+      <File FileName="Assets\scripts\NWBullet.cs" Line="10" Column="32" />
+      <File FileName="Assets\scripts\BasicWeaponSystem.cs" Line="14" Column="2" />
+      <File FileName="Assets\scripts\EliteWeaponSystem.cs" Line="35" Column="48" />
+      <File FileName="Assets\scripts\PlayerWeaponSystem.cs" Line="24" Column="65" />
+      <File FileName="Assets\scripts\SpawnEnemy.cs" Line="40" Column="29" />
+      <File FileName="Assets\scripts\SWBullet.cs" Line="21" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

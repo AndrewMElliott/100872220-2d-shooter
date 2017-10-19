@@ -10,6 +10,7 @@ public class LeftBullet : MonoBehaviour {
 	private float bulletLife;
 	[SerializeField]
 	private float damage = 1f;
+
 	//private Transform bulletPos = this.transform.position; 
 
 
@@ -28,16 +29,16 @@ public class LeftBullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		Debug.Log ("Trigger Object: " + col.tag);
+		
 		if (col.tag == "Player") {
-			Debug.Log ("Player Detected: " + col.tag);
+			
 			ShipController target = col.gameObject.GetComponent<ShipController> ();
 			target.SetDamage (damage);
-		} else if (col.tag == "Enemy Ship") {
-			Debug.Log ("AI Detected: " + col.tag);
-			EnemyAI target = col.gameObject.GetComponent<EnemyAI> ();
-			target.SetDamage (damage);
-		}
+		}// else if (col.tag == "Enemy Ship") {
+			
+		//	EnemyAI target = col.gameObject.GetComponent<EnemyAI> ();
+		//	target.SetDamage (damage);
+		//}
 
 		Destroy (gameObject);
 	}	

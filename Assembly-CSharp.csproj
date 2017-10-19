@@ -46,10 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DestroyObject.cs" />
+     <Compile Include="Assets\scripts\BasicWeaponSystem.cs" />
+     <Compile Include="Assets\scripts\DestroyObject.cs" />
+     <Compile Include="Assets\scripts\EliteWeaponSystem.cs" />
      <Compile Include="Assets\scripts\EnemyAI.cs" />
      <Compile Include="Assets\scripts\LeftBullet.cs" />
+     <Compile Include="Assets\scripts\NWBullet.cs" />
+     <Compile Include="Assets\scripts\PlayerWeaponSystem.cs" />
      <Compile Include="Assets\scripts\RightBullet.cs" />
+     <Compile Include="Assets\scripts\SWBullet.cs" />
      <Compile Include="Assets\scripts\ShipController.cs" />
      <Compile Include="Assets\scripts\SpawnEnemy.cs" />
      <Compile Include="Assets\scripts\SpawnPlayer.cs" />
