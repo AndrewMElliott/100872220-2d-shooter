@@ -7,9 +7,8 @@ public class EnemyAI : MonoBehaviour {
 	private float health = 2f;
 	[SerializeField]
 	private float shipSpeed = 0.1f;
-
-
-
+	[SerializeField]
+	private GameObject[] coinPrefab;
 	[SerializeField]
 	private GameObject explosionPrefab;
 
@@ -21,10 +20,12 @@ public class EnemyAI : MonoBehaviour {
 
 	void Update () {
 		MoveShip ();
-		Explode ();
-		if (transform.position.x <= -9f) {
+		if (health <= 0f) 
+			Explode ();
+		
+		if (transform.position.x <= -9f) 
 			Destroy (gameObject);
-		}
+		
 	}
 
 	public void SetDamage(float damage){
@@ -43,11 +44,25 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	private void Explode(){
-		if (health <= 0f) {
+		
 			GameObject anim = Instantiate (explosionPrefab) as GameObject;
 			Vector2 spawnPoint = new Vector2 (transform.position.x , transform.position.y);
 			anim.transform.position = spawnPoint;
-			Destroy (gameObject);
+			DropItem ();
+			PlayerStatsManager.SetPlayerScore (1f);
+			Destroy (gameObject); 
+
+	}
+
+	private void DropItem(){
+		float rng = Random.Range (1, 11);
+		if (gameObject.tag == "EliteEnemyShip") {
+			GameObject coin = Instantiate(coinPrefab[1]) as GameObject;
+			coin.transform.position = transform.position;
+		}
+		else if (rng <= 4) {
+			GameObject coin = Instantiate(coinPrefab[0]) as GameObject;
+			coin.transform.position = transform.position;
 		}
 	}
 }

@@ -15,7 +15,7 @@ public class RightBullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Translate (Vector2.right * bulletSpeed * Time.deltaTime);
-		if (transform.position.x >= 7.4f)
+		if (transform.position.x >= 8.9f)
 			Destroy (gameObject);
 	}
 
@@ -30,8 +30,9 @@ public class RightBullet : MonoBehaviour {
 		EnemyAI target = col.gameObject.GetComponent<EnemyAI> ();
 		if (target != null) {
 			target.SetDamage (damage);
+			Destroy (gameObject);
 		}
-		Destroy (gameObject);
+
 	}	
 
 }

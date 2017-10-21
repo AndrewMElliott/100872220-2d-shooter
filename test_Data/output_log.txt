@@ -15,44 +15,16 @@ Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\U
 Loading G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.096 seconds
+- Completed reload, in  0.022 seconds
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.858782 ms
-Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Trigger Object: Player
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
+UnloadTime: 1.873797 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 1538 -> priority: 1 
-  Thread -> id: 153c -> priority: 1 
-  Thread -> id: 1544 -> priority: 1 
-  Thread -> id: 1540 -> priority: 1 
+  Thread -> id: 1bec -> priority: 1 
+  Thread -> id: de4 -> priority: 1 
+  Thread -> id: 18a4 -> priority: 1 
+  Thread -> id: 1b98 -> priority: 1 

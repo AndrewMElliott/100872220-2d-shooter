@@ -40,7 +40,7 @@ public class SpawnEnemy : MonoBehaviour {
 	private void SpawnNormal(){
 		if (Time.time > spawnCooldown) {
 			List<float> yCoords = new List<float> {objectY+4f, objectY+3f, objectY+2f, objectY+1f, objectY, objectY-1f, objectY-2f, objectY-3f, objectY-4f};
-			List<float> xCoords = new List<float> {objectX - 1f,objectX - 0.5f, objectX - 0f, objectX + 1f, objectX + 1f};
+			List<float> xCoords = new List<float> {objectX - 1f,objectX - 0.5f, objectX - 0f, objectX + 0.5f, objectX + 1f};
 			spawnCooldown = Time.time + spawnTime;
 			for (int i = 0; i < normalSpawnsPerCD; i++) {
 				int positionX = Random.Range (0,5);

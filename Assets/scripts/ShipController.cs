@@ -6,9 +6,10 @@ public class ShipController : MonoBehaviour {
 
 	[SerializeField]
 	private float shipSpeed = 0.2f;
-
 	[SerializeField]
-	private float currHealth = 5f;
+	private float enemyCollisionDamage = 2f;
+
+
 	[SerializeField]
 	private float maxHealth = 5f;
 
@@ -28,7 +29,7 @@ public class ShipController : MonoBehaviour {
 	}
 
 	public void SetDamage(float damage){
-		currHealth -= damage;
+		PlayerStatsManager.SetPlayerHealth (damage * -1f);
 	}
 
 	private void ShipControls ()
@@ -37,7 +38,7 @@ public class ShipController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.W)) {
 			Vector2 position = this.transform.position;
 			position.y += shipSpeed;
-			if (position.y > 4.6) {
+			if (position.y > 4.6f) {
 
 			} else {
 				this.transform.position = position;
@@ -46,7 +47,7 @@ public class ShipController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.S)) {
 			Vector2 position = this.transform.position;
 			position.y -= shipSpeed;
-			if (position.y < -4.6) {
+			if (position.y < -4.6f) {
 
 			} else {
 				this.transform.position = position;
@@ -55,7 +56,7 @@ public class ShipController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.A)) {
 			Vector2 position = this.transform.position;
 			position.x -= shipSpeed;
-			if(position.x < -7.2)
+			if(position.x < -7.2f)
 			{
 
 			}else{
@@ -65,7 +66,7 @@ public class ShipController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.D)) {
 			Vector2 position = this.transform.position;
 			position.x += shipSpeed;
-			if(position.x > 6.5)
+			if(position.x > 8.9f)
 			{
 
 			}else{
@@ -75,14 +76,36 @@ public class ShipController : MonoBehaviour {
 
 	}
 	private void Explode(){
-		if (currHealth <= 0f) {
+		if (PlayerStatsManager.GetPlayerHealth() < 1f && PlayerStatsManager.GetCanSpawn()) {
 			GameObject anim = Instantiate (explosionPrefab) as GameObject;
 			Vector2 spawnPoint = new Vector2 (transform.position.x , transform.position.y);
 			anim.transform.position = spawnPoint;
+			PlayerStatsManager.SetPlayerLives (-1f);
+			if (PlayerStatsManager.GetPlayerLives () > 0f) {
+				Vector2 startPos = new Vector2 (-5.3f, 0f);
+				transform.position = startPos;
+				PlayerStatsManager.SetPlayerHealth (maxHealth);
+				PlayerStatsManager.SetUpgradePoints (-10f);
+			} else {
+				
+				Destroy (gameObject);
+				PlayerStatsManager.SetCanSpawn (false);
+			}
+		}
+	}
 
-			Vector2 startPos = new Vector2 (-5.3f, 0f);
-			transform.position = startPos;
-			currHealth = maxHealth;
+	 void OnTriggerEnter2D(Collider2D col){		
+		if (col.tag == "UpgradeCoin") {
+			//Debug.Log ("Trigger Collision: " + col.tag);
+			CoinValue value = col.gameObject.GetComponent<CoinValue> ();
+			PlayerStatsManager.SetPlayerScore (value.GetCoinValue());
+			value.PassUpgradeValue ();
+			Destroy (col.gameObject);
+		}
+		if (col.tag == "Enemy Ship") {
+			PlayerStatsManager.SetPlayerHealth (enemyCollisionDamage);
+			EnemyAI whoops = col.gameObject.GetComponent<EnemyAI> ();
+			whoops.SetDamage (100f);
 		}
 	}
 }

@@ -16,7 +16,7 @@ public class NWBullet : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Vector2 diagonal = new Vector2 (-1f * bulletSpeed * Time.deltaTime, 0.5f * bulletSpeed * Time.deltaTime);
+		Vector2 diagonal = new Vector2 (-1f * bulletSpeed * Time.deltaTime,0f);
 		transform.Translate(diagonal);
 		DelayDestroy (bulletLife);
 	}
@@ -30,17 +30,18 @@ public class NWBullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		Debug.Log ("Trigger Object: " + col.tag);
+		
 		if (col.tag == "Player") {
 
 			ShipController target = col.gameObject.GetComponent<ShipController> ();
 			target.SetDamage (damage);
+			Destroy (gameObject);
 		}// else if (col.tag == "Enemy Ship") {
 
 		//	EnemyAI target = col.gameObject.GetComponent<EnemyAI> ();
 		//	target.SetDamage (damage);
 		//}
 
-		Destroy (gameObject);
+
 	}	
 }
