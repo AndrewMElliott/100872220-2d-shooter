@@ -17,9 +17,16 @@ public class PlayerStatsManager : MonoBehaviour {
 		else if (instance != this)
 			Destroy (gameObject);
 
-		//DontDestroyOnLoad (gameObject);
+		ResetStats ();
 	}
 
+	public static void ResetStats(){
+		playerHealth = 5f;
+		playerScore = 0f;
+		upgradePoints = 0f;
+		playerLives = 3f;
+		canSpawn = true;
+	}
 	public static  float GetPlayerHealth(){
 		return playerHealth;
 	}
@@ -39,7 +46,10 @@ public class PlayerStatsManager : MonoBehaviour {
 		canSpawn = spawn;
 	}
 	public static void SetPlayerLives(float life){
-		playerLives += life;
+		playerLives = life;
+	}
+	public static void DecrementPlayerLives(float life){
+		playerLives -= life;
 	}
 	public static void SetPlayerHealth(float health){
 		if (playerHealth + health < 0) {

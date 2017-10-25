@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipController : MonoBehaviour {
 
@@ -26,15 +27,15 @@ public class ShipController : MonoBehaviour {
 	void Update () {
 		ShipControls ();
 		Explode ();
-	}
 
+	}
+	// sends damage to player stat manager. Positive number decreases health.
 	public void SetDamage(float damage){
 		PlayerStatsManager.SetPlayerHealth (damage * -1f);
 	}
-
+	//Moves ship around the game area. Standard WASD keys.
 	private void ShipControls ()
 	{
-
 		if (Input.GetKey (KeyCode.W)) {
 			Vector2 position = this.transform.position;
 			position.y += shipSpeed;
@@ -73,27 +74,31 @@ public class ShipController : MonoBehaviour {
 				this.transform.position = position;
 			}
 		}
-
 	}
+	//Checks condition for player explosion
 	private void Explode(){
 		if (PlayerStatsManager.GetPlayerHealth() < 1f && PlayerStatsManager.GetCanSpawn()) {
 			GameObject anim = Instantiate (explosionPrefab) as GameObject;
 			Vector2 spawnPoint = new Vector2 (transform.position.x , transform.position.y);
 			anim.transform.position = spawnPoint;
-			PlayerStatsManager.SetPlayerLives (-1f);
-			if (PlayerStatsManager.GetPlayerLives () > 0f) {
-				Vector2 startPos = new Vector2 (-5.3f, 0f);
-				transform.position = startPos;
-				PlayerStatsManager.SetPlayerHealth (maxHealth);
-				PlayerStatsManager.SetUpgradePoints (-10f);
-			} else {
-				
-				Destroy (gameObject);
-				PlayerStatsManager.SetCanSpawn (false);
-			}
+			PlayerStatsManager.DecrementPlayerLives (1f);
+			Spawn ();
 		}
 	}
-
+	private void Spawn(){
+		if (PlayerStatsManager.GetPlayerLives () > 0f) {
+			Vector2 startPos = new Vector2 (-5.3f, 0f);
+			transform.position = startPos;
+			PlayerStatsManager.SetPlayerHealth (maxHealth);
+			PlayerStatsManager.SetUpgradePoints (-10f);
+		} else {
+			
+			PlayerStatsManager.SetCanSpawn (false);
+			SceneManager.LoadScene ("game_over");
+			Destroy (gameObject);
+		}
+	}
+	//trigger detection for enemy ships and coins.
 	 void OnTriggerEnter2D(Collider2D col){		
 		if (col.tag == "UpgradeCoin") {
 			//Debug.Log ("Trigger Collision: " + col.tag);
@@ -102,10 +107,14 @@ public class ShipController : MonoBehaviour {
 			value.PassUpgradeValue ();
 			Destroy (col.gameObject);
 		}
-		if (col.tag == "Enemy Ship") {
-			PlayerStatsManager.SetPlayerHealth (enemyCollisionDamage);
+		if (col.tag == "Enemy Ship" || col.tag == "EliteEnemyShip") {
+			PlayerStatsManager.SetPlayerHealth (-enemyCollisionDamage);
 			EnemyAI whoops = col.gameObject.GetComponent<EnemyAI> ();
-			whoops.SetDamage (100f);
+			if (col.tag == "EliteEnemyShip") {
+				whoops.SetDamage (5f);
+			} else {
+				whoops.SetDamage (100f);
+			}
 		}
 	}
 }

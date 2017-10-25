@@ -46,26 +46,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ScrollBackground.cs" />
-     <Compile Include="Assets\UpgradeUI.cs" />
-     <Compile Include="Assets\scripts\BasicWeaponSystem.cs" />
-     <Compile Include="Assets\scripts\CoinValue.cs" />
-     <Compile Include="Assets\scripts\DestroyObject.cs" />
-     <Compile Include="Assets\scripts\EliteWeaponSystem.cs" />
-     <Compile Include="Assets\scripts\EnemyAI.cs" />
-     <Compile Include="Assets\scripts\HealthUI.cs" />
-     <Compile Include="Assets\scripts\LeftBullet.cs" />
-     <Compile Include="Assets\scripts\LivesUI.cs" />
-     <Compile Include="Assets\scripts\LoadPSM.cs" />
-     <Compile Include="Assets\scripts\NWBullet.cs" />
-     <Compile Include="Assets\scripts\PlayerStatsManager.cs" />
-     <Compile Include="Assets\scripts\PlayerWeaponSystem.cs" />
-     <Compile Include="Assets\scripts\RightBullet.cs" />
-     <Compile Include="Assets\scripts\SWBullet.cs" />
-     <Compile Include="Assets\scripts\ScoreUI.cs" />
-     <Compile Include="Assets\scripts\ShipController.cs" />
-     <Compile Include="Assets\scripts\SpawnEnemy.cs" />
-     <Compile Include="Assets\scripts\TriggerHandler.cs" />
+     <Compile Include="Assets\scripts\AI\EnemyAI.cs" />
+     <Compile Include="Assets\scripts\Bullet Scripts\LeftBullet.cs" />
+     <Compile Include="Assets\scripts\Bullet Scripts\NWBullet.cs" />
+     <Compile Include="Assets\scripts\Bullet Scripts\RightBullet.cs" />
+     <Compile Include="Assets\scripts\Bullet Scripts\SWBullet.cs" />
+     <Compile Include="Assets\scripts\Enemy Spawner Scripts\SpawnEnemy.cs" />
+     <Compile Include="Assets\scripts\Player Controllers\ShipController.cs" />
+     <Compile Include="Assets\scripts\Player Stat Manager Scripts\LoadPSM.cs" />
+     <Compile Include="Assets\scripts\Player Stat Manager Scripts\PlayerStatsManager.cs" />
+     <Compile Include="Assets\scripts\Player Stat Manager Scripts\SceneOne.cs" />
+     <Compile Include="Assets\scripts\UI Scripts\ExitGame.cs" />
+     <Compile Include="Assets\scripts\UI Scripts\GameOverScore.cs" />
+     <Compile Include="Assets\scripts\UI Scripts\HealthUI.cs" />
+     <Compile Include="Assets\scripts\UI Scripts\LivesUI.cs" />
+     <Compile Include="Assets\scripts\UI Scripts\SceneChange.cs" />
+     <Compile Include="Assets\scripts\UI Scripts\ScoreUI.cs" />
+     <Compile Include="Assets\scripts\UI Scripts\UpgradeUI.cs" />
+     <Compile Include="Assets\scripts\Weapon System Scripts\BasicWeaponSystem.cs" />
+     <Compile Include="Assets\scripts\Weapon System Scripts\EliteWeaponSystem.cs" />
+     <Compile Include="Assets\scripts\Weapon System Scripts\PlayerWeaponSystem.cs" />
+     <Compile Include="Assets\scripts\misc\CoinValue.cs" />
+     <Compile Include="Assets\scripts\misc\DestroyObject.cs" />
+     <Compile Include="Assets\scripts\misc\ScrollBackground.cs" />
+     <Compile Include="Assets\scripts\misc\TriggerHandler.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
