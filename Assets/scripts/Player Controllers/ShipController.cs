@@ -1,4 +1,18 @@
-﻿using System.Collections;
+﻿/* Source File: Scripts/PlayerControllers
+ * Author: Andrew Elliott
+ * 
+ * Last Modified by: Andrew Elliott
+ * 
+ * Revision History:
+ * October 24, 2017
+ * November 23, 2017
+ * 
+ * Description: Script to control the player ship. This script controls player movements,
+ * 				fire control, death explosion animation and collision detection.
+ * */
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,20 +23,19 @@ public class ShipController : MonoBehaviour {
 	private float shipSpeed = 0.2f;
 	[SerializeField]
 	private float enemyCollisionDamage = 2f;
-
-
 	[SerializeField]
 	private float maxHealth = 5f;
-
 	[SerializeField]
 	private GameObject explosionPrefab;
+	private AudioSource[] allAudio;
+	private AudioSource explosionSound;
+	private AudioSource hurtSound;
 
-
-	// Use this for initialization
-	void Start () {
-		
+	void Start(){
+		allAudio = GetComponents<AudioSource> ();
+		explosionSound = allAudio [1];
+		hurtSound = allAudio [0];
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		ShipControls ();
@@ -39,18 +52,18 @@ public class ShipController : MonoBehaviour {
 		if (Input.GetKey (KeyCode.W)) {
 			Vector2 position = this.transform.position;
 			position.y += shipSpeed;
-			if (position.y > 4.6f) {
-
-			} else {
+			if (position.y > 4.6f) 
+			{}
+			else {
 				this.transform.position = position;
 			}
 		}
 		if (Input.GetKey (KeyCode.S)) {
 			Vector2 position = this.transform.position;
 			position.y -= shipSpeed;
-			if (position.y < -4.6f) {
-
-			} else {
+			if (position.y < -4.6f) 
+			{} 
+			else {
 				this.transform.position = position;
 			}
 		}
@@ -58,9 +71,8 @@ public class ShipController : MonoBehaviour {
 			Vector2 position = this.transform.position;
 			position.x -= shipSpeed;
 			if(position.x < -7.2f)
-			{
-
-			}else{
+			{}
+			else{
 				this.transform.position = position;
 			}
 		}
@@ -68,9 +80,8 @@ public class ShipController : MonoBehaviour {
 			Vector2 position = this.transform.position;
 			position.x += shipSpeed;
 			if(position.x > 8.9f)
-			{
-
-			}else{
+			{}
+			else{
 				this.transform.position = position;
 			}
 		}
@@ -82,9 +93,11 @@ public class ShipController : MonoBehaviour {
 			Vector2 spawnPoint = new Vector2 (transform.position.x , transform.position.y);
 			anim.transform.position = spawnPoint;
 			PlayerStatsManager.DecrementPlayerLives (1f);
+			explosionSound.Play ();
 			Spawn ();
 		}
 	}
+	//Spawn player on death if there are lives left.
 	private void Spawn(){
 		if (PlayerStatsManager.GetPlayerLives () > 0f) {
 			Vector2 startPos = new Vector2 (-5.3f, 0f);
@@ -109,12 +122,13 @@ public class ShipController : MonoBehaviour {
 		}
 		if (col.tag == "Enemy Ship" || col.tag == "EliteEnemyShip") {
 			PlayerStatsManager.SetPlayerHealth (-enemyCollisionDamage);
-			EnemyAI whoops = col.gameObject.GetComponent<EnemyAI> ();
+			EnemyAI collide = col.gameObject.GetComponent<EnemyAI> ();
 			if (col.tag == "EliteEnemyShip") {
-				whoops.SetDamage (5f);
+				collide.SetDamage (5f);
 			} else {
-				whoops.SetDamage (100f);
+				collide.SetDamage (100f);
 			}
+			hurtSound.Play ();
 		}
 	}
 }

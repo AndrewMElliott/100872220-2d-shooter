@@ -68,8 +68,8 @@
      <Compile Include="Assets\scripts\Weapon System Scripts\PlayerWeaponSystem.cs" />
      <Compile Include="Assets\scripts\misc\CoinValue.cs" />
      <Compile Include="Assets\scripts\misc\DestroyObject.cs" />
+     <Compile Include="Assets\scripts\misc\DestroyTimer.cs" />
      <Compile Include="Assets\scripts\misc\ScrollBackground.cs" />
-     <Compile Include="Assets\scripts\misc\TriggerHandler.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

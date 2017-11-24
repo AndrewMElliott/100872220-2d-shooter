@@ -55,3 +55,4 @@ MonoBehaviour:
     type: 2}
   bulletTwoPrefab: {fileID: 1380289981583892, guid: 94f5dc73f35ffa94a90f785e8b197f95,
     type: 2}
+  bulletThreePrefab: {fileID: 0}

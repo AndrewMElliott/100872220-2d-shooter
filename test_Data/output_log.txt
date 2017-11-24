@@ -15,16 +15,22 @@ Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\U
 Loading G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.024 seconds
+- Completed reload, in  0.026 seconds
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: G:\Unity Stuff\A1_100872220_ElliottAndrew\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.832352 ms
+UnloadTime: 1.852182 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 10.366875 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 447.
+Total: 0.377463 ms (FindLiveObjects: 0.027026 ms CreateObjectMapping: 0.037536 ms MarkObjects: 0.296385 ms  DeleteObjects: 0.016215 ms)
+
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: f5c -> priority: 1 
-  Thread -> id: f2c -> priority: 1 
-  Thread -> id: 1df8 -> priority: 1 
-  Thread -> id: 6b4 -> priority: 1 
+  Thread -> id: 1490 -> priority: 1 
+  Thread -> id: 1444 -> priority: 1 
+  Thread -> id: 19c4 -> priority: 1 
+  Thread -> id: 1b5c -> priority: 1 

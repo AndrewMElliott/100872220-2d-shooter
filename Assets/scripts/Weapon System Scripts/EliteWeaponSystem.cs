@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/* Source File: Scripts/Weapon System Scripts
+ * Author: Andrew Elliott
+ * 
+ * Last Modified by: Andrew Elliott
+ * 
+ * Revision History:
+ * October 24, 2017
+ * November 23, 2017
+ * 
+ * Description: Elite weapon scripts the elite enemy ship AI uses. 
+ * */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,28 +23,24 @@ public class EliteWeaponSystem : MonoBehaviour {
 	private GameObject bulletTwoPrefab;
 	[SerializeField]
 	private GameObject bulletThreePrefab;
-	// Use this for initialization
-	void Start () {
-		
-	}
 
 	// Update is called once per frame
 	void Update () {
 		Shoot ();
 	}
-
+	//Checks for cooldown is up, then instantiates bullet.
 	private void Shoot(){
 		if (Time.time > fireCooldown) {
 			fireCooldown = Time.time + fireRate;
 
-			GameObject bullet = Instantiate (bulletOnePrefab) as GameObject;
-			GameObject bulletTwo = Instantiate (bulletTwoPrefab) as GameObject;
-			GameObject bulletThree = Instantiate (bulletThreePrefab) as GameObject;
+			GameObject bullet 		= Instantiate (bulletOnePrefab) as GameObject;
+			GameObject bulletTwo 	= Instantiate (bulletTwoPrefab) as GameObject;
+			GameObject bulletThree 	= Instantiate (bulletThreePrefab) as GameObject;
 
 			Vector2 spawnPoint = new Vector2 (transform.position.x - 0.2f, transform.position.y);
-			bullet.transform.position = spawnPoint;
-			bulletTwo.transform.position = spawnPoint;
-			bulletThree.transform.position = spawnPoint;
+			bullet.transform.position 		= spawnPoint;
+			bulletTwo.transform.position 	= spawnPoint;
+			bulletThree.transform.position 	= spawnPoint;
 		}
 	}
 }

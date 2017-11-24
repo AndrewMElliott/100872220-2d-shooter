@@ -1,8 +1,21 @@
-﻿using System.Collections;
+﻿/* Source File: Scripts/AI
+ * Author: Andrew Elliott
+ * 
+ * Last Modified by: Andrew Elliott
+ * 
+ * Revision History:
+ * October 24, 2017
+ * November 23, 2017
+ * 
+ * Description: This script sets the enemy ship behavior.
+ * */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour {
+	
 	[SerializeField]
 	private float health = 2f;
 	[SerializeField]
@@ -13,19 +26,14 @@ public class EnemyAI : MonoBehaviour {
 	private GameObject explosionPrefab;
 
 
-	void Start () {
-		
-	}
-	
-
 	void Update () {
 		MoveShip ();
-		if (health <= 0f) 
+		if (health <= 0f) { 
 			Explode ();
+		}
 		
 		if (transform.position.x <= -9f) 
 			Destroy (gameObject);
-		
 	}
 
 	public void SetDamage(float damage){
@@ -35,23 +43,14 @@ public class EnemyAI : MonoBehaviour {
 	private void MoveShip(){
 		transform.Translate (Vector2.left * shipSpeed);
 	}
-
-
-
-	public void OnTriggerEnter2D(Collider2D other){
 		
-
-	}
-
 	private void Explode(){
-		
-			GameObject anim = Instantiate (explosionPrefab) as GameObject;
-			Vector2 spawnPoint = new Vector2 (transform.position.x , transform.position.y);
-			anim.transform.position = spawnPoint;
-			DropItem ();
-			PlayerStatsManager.SetPlayerScore (1f);
-			Destroy (gameObject); 
-
+		GameObject anim = Instantiate (explosionPrefab) as GameObject;
+		Vector2 spawnPoint = new Vector2 (transform.position.x , transform.position.y);
+		anim.transform.position = spawnPoint;
+		DropItem ();
+		PlayerStatsManager.SetPlayerScore (1f);
+		Destroy (gameObject); 
 	}
 
 	private void DropItem(){
